@@ -1,68 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
+
 :root {
   --border-color: rgb(66, 100, 145);
 }
 
-a,
-a:hover,
-a:visited {
-  text-decoration: none;
-  color: black;
-}
-.mainContainer {
-  display: flex;
-  width: 80vw;
-  padding: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  margin-left: 10vw;
-  background-color: rgba(121, 120, 120, 0.479);
-}
-.navBar {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: flex-start;
-  margin-bottom: 30px;
-}
-
-.contactForm {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  width: 350px;
-  padding: 20px;
-  background-color: aqua;
-  border-radius: 5px;
-}
-
-input,
-textarea {
-  display: flex;
-  width: 300px;
-  border-radius: 5px;
-  resize: none;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  padding: 3px;
-}
-button {
-  border-radius: 5px;
-  padding: 3px;
-  width: 150px;
-  background-color: rgb(6, 131, 214);
-  cursor: pointer;
-}
-button:hover,
-.currentSection {
-  background-color: blue;
-}
 
 /* ESTILOS PARA LAS CARDS RICK AND MORTY */
 .mainContainer_character {

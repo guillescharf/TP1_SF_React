@@ -9,6 +9,7 @@ counter++
 // hago las peticiones y espero la respuesta y muestro el resultado llamando a la funcion showme 
  const data = await fetch(`https://rickandmortyapi.com/api/character/?page=${++counter}`) 
  const res = await data.json()
+ checkPaginator(res)
 showmeData(res)
 })
 
@@ -19,5 +20,7 @@ buttonBck.addEventListener('click', async ()=>{
      // muestro la info nueva 
     showmeData(res)
 })
-
+const checkPaginator =(res)=>{
+    
+}
 
