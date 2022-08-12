@@ -55,7 +55,29 @@ function sendForm(){
         alert("Thanks, your message has been sent successfully!");
         // Aca deberia enviar los datos a un script para procesarlos, por ahora "simulamos"
         // el envio.... si devolvieramos true, se realizaria el submit del form al action establecido.
-        formReset();
+        //formReset();
+        showFormData();
         return false;
     }
+}
+
+function showFormData(){
+    const name = document.getElementById('contactFormName').value;
+    const email = document.getElementById('contactFormEmail').value;
+    const comments = document.getElementById('contactFormComments').value;   
+    // Este mensaje es ilustrativo para mostrar la info que se deberia enviar por el form
+    const msgToShow = `
+    <div class="msgToShow">
+        <h1>Meessage Sent</h1>
+        <p>Your message has been sent as following:</p>
+        <br /><br />
+        <p>
+            <u>Name:</u> <i>${name}</i><br /><br />
+            <u>Email:</u> <i>${email}</i><br /><br />
+            <u>Comments:</u> <i>${comments}</i><br /><br />
+        </p>
+    </div>
+    `;
+
+    document.getElementById("contactForm").innerHTML = msgToShow;
 }
