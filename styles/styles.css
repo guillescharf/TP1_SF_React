@@ -1,3 +1,4 @@
+/* Estilos generales */
 *{
     margin: 0;
     padding: 0;
@@ -21,11 +22,19 @@ a, a:hover, a:visited{
     justify-content: center;
     align-content: center;
     margin-left: 10vw;
+    margin-top: 5vh;
+    background-color: rgb(87, 192, 196);
+    border-radius: 30px;
     background-color: rgba(121, 120, 120, 0.479);
 }
 .navBar{
     display: flex;
     width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+button{
     justify-content: center;
     align-items: flex-start;
     margin-bottom: 30px;
@@ -61,7 +70,26 @@ button{
 button:hover, .currentSection{
     background-color: blue;
 }
-.div-tabla {
-    color: white;
-    font-size: 16px;
+.pageTitle{
+    margin-bottom: 20px;
+    font-size: 5vw;
 }
+/* Estilos especificos para la pagina index */
+.intro{
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.intro h2{
+    margin-top: 20px;
+}
+.intro p{
+    text-decoration:none;
+}
+.devsList{
+    margin-top: 20px;
+    list-style:none;
+}
+
