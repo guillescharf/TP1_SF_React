@@ -1,0 +1,63 @@
+/* Estilos generales */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+a, a:hover, a:visited{
+    text-decoration: none;
+    color: black;
+}
+.mainContainer{
+    display: flex;
+    width: 80vw;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-left: 10vw;
+    margin-top: 5vh;
+    background-color: rgb(87, 192, 196);
+    border-radius: 30px;
+}
+.navBar{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+button{
+    border-radius: 5px;
+    padding: 3px;
+    width: 150px;
+    background-color: rgb(6, 131, 214);
+    cursor: pointer;
+}
+button:hover, .currentSection{
+    background-color: blue;
+}
+.pageTitle{
+    margin-bottom: 20px;
+    font-size: 5vw;
+}
+/* Estilos especificos para la pagina index */
+.intro{
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.intro h2{
+    margin-top: 20px;
+}
+.intro p{
+    text-decoration:none;
+}
+.devsList{
+    margin-top: 20px;
+    list-style:none;
+}
+
