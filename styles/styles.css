@@ -5,6 +5,11 @@
     box-sizing: border-box;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
 }
+
+body {
+    background-image: url(https://raw.githubusercontent.com/ignacio2194/rickAndMorty-API/main/images/heic1909a.jpg);
+}
+
 a, a:hover, a:visited{
     text-decoration: none;
     color: black;
@@ -20,6 +25,7 @@ a, a:hover, a:visited{
     margin-top: 5vh;
     background-color: rgb(87, 192, 196);
     border-radius: 30px;
+    background-color: rgba(121, 120, 120, 0.479);
 }
 .navBar{
     display: flex;
@@ -29,6 +35,32 @@ a, a:hover, a:visited{
     margin-bottom: 30px;
 }
 button{
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.contactForm{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 350px;
+    padding: 20px;
+    background-color: aqua;
+    border-radius: 5px;
+}
+
+input, textarea{
+    display: flex;
+    width: 300px;
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 3px;
+}
+button{
+
     border-radius: 5px;
     padding: 3px;
     width: 150px;
