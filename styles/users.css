@@ -3,3 +3,11 @@
   font-size: 16px;
 }
 
+table {
+  border: 1;
+}
+
+td {
+  text-align: center;
+}
+
