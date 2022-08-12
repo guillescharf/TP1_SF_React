@@ -13,10 +13,10 @@
     <div class="mainContainer">
         <h1 class="pageTitle">Contact Us</h1>
         <div class="navBar">
-            <button><a href="../index.html">Home</a></button>
-            <button><a href="./users.html">Users</a></button>
-            <button><a href="./cards.html">Cards</a></button>
-            <button><a href="./contact.html">Contact</a></button>
+            <a class="button" href="../index.html">Home</a> 
+            <a class="button" href="./pages/users.html">Users</a> 
+            <a class="button" href="./pages/cards.html">Cards</a> 
+            <a class="button" href="./pages/contact.html">Contact</a> 
         </div>    
         <div class="contactForm" id="contactForm">
             <form id="contactForm" action="">
@@ -26,8 +26,8 @@
                 <input type="email" name="email" id="contactFormEmail" onblur="validateEmail();">
                 <label for="comments">Comments</label>
                 <textarea name="comments" id="contactFormComments" cols="30" rows="10"></textarea>  
-                <button id="contactFormReset" onclick="return(formReset());">Reset</button>  
-                <button id="contactFormSend" onclick="return(sendForm());">Send</button> 
+                <button class="button" id="contactFormReset" onclick="return(formReset());">Reset</button>  
+                <button class="button" id="contactFormSend" onclick="return(sendForm());">Send</button> 
             </form>
         </div>
 
