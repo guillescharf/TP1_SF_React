@@ -1,14 +1,19 @@
 .div-tabla {
+  display: flex;
+  justify-content: center;
   color: white ; 
   font-size: 16px;
 }
 
 table {
-  border: 1;
+  font-size: 8px;
+  border: 1px solid white;
+  padding: 8px;
+  margin-top: 10px;
 }
 
-td {
+td,th{
   text-align: center;
+  margin: 0 5px;
 }
 
-/* border a cada columna */
