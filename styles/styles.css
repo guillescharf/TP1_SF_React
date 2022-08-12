@@ -10,6 +10,8 @@ body {
     background-image: url(https://raw.githubusercontent.com/ignacio2194/rickAndMorty-API/main/images/heic1909a.jpg);
 }
 
+tr,td{color: white;}
+
 a, a:hover, a:visited{
     text-decoration: none;
     color: black;
