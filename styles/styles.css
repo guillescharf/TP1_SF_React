@@ -36,25 +36,6 @@ a, a:hover, a:visited{
     margin-bottom: 30px;
 }
 
-.contactForm{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    width: 350px;
-    padding: 20px;
-    background-color: aqua;
-    border-radius: 5px;
-}
-
-input, textarea{
-    display: flex;
-    width: 300px;
-    border-radius: 5px;
-    resize: none;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    padding: 3px;
-}
 
 .button{
     border-radius: 5px;
