@@ -16,8 +16,12 @@
   height: 95%;
   position: relative;
 }
+.mainContainer_character__contenido_data{
+  margin: 10px;
+  color:#8fe649;
+}
 .mainContainer_character__contenido img {
-  border-radius: 8%;
+  border-radius: 8% 8% 0  0;
   width: 100%;
  
 }
@@ -27,7 +31,9 @@
     right: 10px;
     color: #fff;
     background-color: red;
-    border-radius: 5%;
+    border-radius: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 .button{
     margin:20px ;
@@ -44,4 +50,21 @@
 .buttonBack:hover,.buttonNext:hover{
  color: #000;
  background-color: rgb(69, 69, 248);
+}
+.buttonHidden{
+  display:none;
+}
+.buttonVisible{
+  display: block;
+}
+
+/* ESTILOS PARA LOS ESTATUS DE LOS PERSONAJES */
+.characterAlive{
+  background-color: #86b95c;
+}
+.characterDead{
+  background-color: rgb(252, 107, 107);
+}
+.characterUnknown{
+  background-color: rgb(252, 184, 107);
 }
