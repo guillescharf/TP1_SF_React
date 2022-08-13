@@ -7,6 +7,7 @@
     padding: 20px;
     background-color: lightblue;
     border-radius: 5px;
+    color: black;
 }
 input, textarea{
     display: flex;
