@@ -42,6 +42,9 @@ const checkPagination = (counter, pages) => {
 
 const searchCharacter = (data) => {
   searcher.addEventListener("keydown", (e) => {
-    let filterName = data.filter((character) => console.log(character));
+    let filterName = data.filter((character) =>
+      character.name.includes(e.target.value)
+    );
+    showmeData(filterName);
   });
 };

@@ -5,7 +5,7 @@ const getData = async () => {
   try {
     const data = await fetch(url);
     const res = await data.json();
-    showmeData(res);
+    showmeData(res.results);
     searchCharacter(res.results);
   } catch (error) {
     console.log(error);
@@ -15,7 +15,7 @@ getData();
 
 const showmeData = (data) => {
   let body = ``;
-  data.results.map(
+  data.map(
     (item) =>
       (body += `<div class="mainContainer_character__contenido">
     <div > <img src =${item.image}>  
