@@ -14,7 +14,9 @@ buttonNext.addEventListener("click", async () => {
   const res = await data.json();
 
   checkPagination(counter, res.info.pages);
-  showmeData(res, counter);
+  showmeData(res.results);
+
+
 });
 
 buttonBck.addEventListener("click", async () => {
@@ -27,7 +29,9 @@ buttonBck.addEventListener("click", async () => {
   // controlo que el usuario no rompa la paginacion
   checkPagination(counter, res.info.pages);
   // muestro la info nueva
-  showmeData(res);
+  showmeData(res.results);
+  
+
 });
 
 const checkPagination = (counter, pages) => {
@@ -43,7 +47,9 @@ const checkPagination = (counter, pages) => {
 const searchCharacter = (data) => {
   searcher.addEventListener("keydown", (e) => {
     let filterName = data.filter((character) =>
-      character.name.includes(e.target.value)
+      character.name.includes(
+        e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1)
+      )
     );
     showmeData(filterName);
   });
