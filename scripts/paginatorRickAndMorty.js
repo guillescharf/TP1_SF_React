@@ -15,8 +15,6 @@ buttonNext.addEventListener("click", async () => {
 
   checkPagination(counter, res.info.pages);
   showmeData(res.results);
-
-
 });
 
 buttonBck.addEventListener("click", async () => {
@@ -30,8 +28,6 @@ buttonBck.addEventListener("click", async () => {
   checkPagination(counter, res.info.pages);
   // muestro la info nueva
   showmeData(res.results);
-  
-
 });
 
 const checkPagination = (counter, pages) => {
@@ -52,5 +48,21 @@ const searchCharacter = (data) => {
       )
     );
     showmeData(filterName);
+  });
+};
+
+const getCharacter = (data) => {
+  const character = document.querySelectorAll(
+    ".mainContainer_character__contenido"
+  );
+  character.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      
+      const selectedCharacter = data.filter(
+        (character) =>
+          character.id === parseInt(e.target.parentElement.parentNode.id)
+      );
+ showmeData(selectedCharacter)
+    });
   });
 };

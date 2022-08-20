@@ -1,6 +1,7 @@
 var url = "https://rickandmortyapi.com/api/character";
 const selector = document.querySelector(".mainContainer_character");
 
+
 const getData = async () => {
   try {
     const data = await fetch(url);
@@ -8,7 +9,7 @@ const getData = async () => {
     
     showmeData(res.results);
     searchCharacter(res.results);
-    filterResults(res.results)
+    getCharacter(res.results)
   } catch (error) {
     console.log(error);
   }
@@ -20,7 +21,8 @@ const showmeData = (data) => {
   data.map(
     (item) =>
     
-      (body += `<div class="mainContainer_character__contenido">
+      (body += `
+    <div class="mainContainer_character__contenido" id =${item.id}>
     <div > <img src =${item.image}>  
     <h3 class ="mainContainer_character__contenido_status ${
       item.status === "Alive"
@@ -38,3 +40,4 @@ const showmeData = (data) => {
   );
   selector.innerHTML = body;
 };
+
