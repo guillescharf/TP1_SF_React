@@ -35,10 +35,10 @@
 /* ESTILOS PARA CUANDO MUESTRA UNA CARD  */
 .characterSelected_container {
   position: fixed;
-  top: 35px;
+  top: 50px;
   left: 0;
   right: 0;
-  bottom: 0;
+
   opacity: 0;
   background-color: #000000bd;
 }
