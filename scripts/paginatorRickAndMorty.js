@@ -57,12 +57,35 @@ const getCharacter = (data) => {
   );
   character.forEach((item) => {
     item.addEventListener("click", (e) => {
-      
+
       const selectedCharacter = data.filter(
         (character) =>
           character.id === parseInt(e.target.parentElement.parentNode.id)
       );
- showmeData(selectedCharacter)
+      showCharacterSelected(selectedCharacter)
     });
   });
 };
+showCharacterSelected = (data) => {
+  let body = ``;
+  data.map(
+    (item) =>
+
+    (body += `
+ 
+    <div > <img src =${item.image}>  
+    <h3 class ="mainContainer_character__contenido_status ${item.status === "Alive"
+        ? "characterAlive"
+        : item.status === "unknown"
+          ? "characterUnknown"
+          : "characterDead"
+      }" >${item.status}</h3>
+    </div>
+    <div class="mainContainer_character__contenido_data">
+     <h1 >${item.name}</h1>
+      <h3>${item.location.name}</h3>
+  </div>
+     `)
+  );
+  document.querySelector('.characterSelected_container').innerHTML = body;
+}
