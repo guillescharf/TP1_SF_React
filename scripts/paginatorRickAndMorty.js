@@ -1,6 +1,7 @@
 const buttonNext = document.querySelector(".buttonNext");
 const buttonBck = document.querySelector(".buttonBack");
 const searcher = document.querySelector("#searcher");
+const modal = document.querySelector(".characterSelected_container");
 
 let counter = 1;
 
@@ -57,12 +58,14 @@ const getCharacter = (data) => {
   );
   character.forEach((item) => {
     item.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.classList.add("modal--show");
 
       const selectedCharacter = data.filter(
         (character) =>
           character.id === parseInt(e.target.parentElement.parentNode.id)
       );
-      showCharacterSelected(selectedCharacter)
+      showCharacterSelected(selectedCharacter);
     });
   });
 };
@@ -70,22 +73,40 @@ showCharacterSelected = (data) => {
   let body = ``;
   data.map(
     (item) =>
-
-    (body += `
+      (body += `
  
-    <div > <img src =${item.image}>  
-    <h3 class ="mainContainer_character__contenido_status ${item.status === "Alive"
-        ? "characterAlive"
-        : item.status === "unknown"
+      <div class="characterSelected_container_modal" id =${item.id}>
+      <img src =${item.image} >  
+      <h3 class ="mainContainer_character__contenido_status ${
+        item.status === "Alive"
+          ? "characterAlive"
+          : item.status === "unknown"
           ? "characterUnknown"
           : "characterDead"
       }" >${item.status}</h3>
-    </div>
-    <div class="mainContainer_character__contenido_data">
-     <h1 >${item.name}</h1>
-      <h3>${item.location.name}</h3>
-  </div>
-     `)
+      <div class="mainContainer_character__contenido_data">
+        <h1 >${item.name}</h1>
+        <h3>${item.location.name}</h3>
+      </div>
+ 
+      </div>
+      <div class="buttonModal"> <button class="buttonBack" id="buttonModal"  type="button">Close</button> </div>
+   
+   
+       </div>`)
   );
-  document.querySelector('.characterSelected_container').innerHTML = body;
+  
+  modal.innerHTML = body;
+
+  closeModal()
+};
+
+const closeModal =()=>{
+  const btnCloseModal = document.querySelector("#buttonModal")
+
+  btnCloseModal.addEventListener('click',(e)=>{
+    e.preventDefault()
+    modal.classList.remove('modal--show')
+
+  })
 }

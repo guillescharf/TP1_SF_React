@@ -22,7 +22,7 @@ const showmeData = (data) => {
     (item) =>
     
       (body += `
-    <div class="mainContainer_character__contenido" id =${item.id}>
+    <div class="mainContainer_character__contenido " id =${item.id}>
     <div > <img src =${item.image}>  
     <h3 class ="mainContainer_character__contenido_status ${
       item.status === "Alive"
