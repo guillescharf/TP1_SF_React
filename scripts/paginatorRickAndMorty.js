@@ -14,8 +14,9 @@ buttonNext.addEventListener("click", async () => {
   );
   const res = await data.json();
 
-  checkPagination(counter, res.info.pages);
+  checkPagination(res.info.pages);
   showmeData(res.results);
+
 });
 
 buttonBck.addEventListener("click", async () => {
@@ -26,9 +27,10 @@ buttonBck.addEventListener("click", async () => {
   );
   const res = await data.json();
   // controlo que el usuario no rompa la paginacion
-  checkPagination(counter, res.info.pages);
+  checkPagination(res.info.pages);
   // muestro la info nueva
   showmeData(res.results);
+
 });
 
 const checkPagination = (counter, pages) => {
@@ -40,7 +42,7 @@ const checkPagination = (counter, pages) => {
     buttonNext.classList.remove("buttonHidden");
   }
 };
-
+// buscador de personajes 
 const searchCharacter = (data) => {
   searcher.addEventListener("keydown", (e) => {
     let filterName = data.filter((character) =>
@@ -51,36 +53,33 @@ const searchCharacter = (data) => {
     showmeData(filterName);
   });
 };
-
 const getCharacter = (data) => {
-  const character = document.querySelectorAll(
-    ".mainContainer_character__contenido"
-  );
-  character.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      e.preventDefault();
+  const characters = document.querySelectorAll(".mainContainer_character__contenido");
+  console.log(characters)
+  
+  characters.forEach((character) => {
+    character.addEventListener("click", (e) => {
+      
+      const selectedCharacter = data.filter((character) =>
+          character.id === parseInt(e.target.parentElement.parentNode.id));
+      showCharacterSelected(selectedCharacter);
       modal.classList.add("modal--show");
 
-      const selectedCharacter = data.filter(
-        (character) =>
-          character.id === parseInt(e.target.parentElement.parentNode.id)
-      );
-      showCharacterSelected(selectedCharacter);
     });
   });
 };
+// Funcion que recibe un personaje por parametro y lo muestra en el modal
 showCharacterSelected = (data) => {
   let body = ``;
   data.map(
     (item) =>
-      (body += `
+    (body += `
  
       <div class="characterSelected_container_modal" id =${item.id}>
       <img src =${item.image} >  
-      <h3 class ="mainContainer_character__contenido_status ${
-        item.status === "Alive"
-          ? "characterAlive"
-          : item.status === "unknown"
+      <h3 class ="mainContainer_character__contenido_status ${item.status === "Alive"
+        ? "characterAlive"
+        : item.status === "unknown"
           ? "characterUnknown"
           : "characterDead"
       }" >${item.status}</h3>
@@ -95,16 +94,19 @@ showCharacterSelected = (data) => {
    
        </div>`)
   );
-  
+
+  getCharacter()
   modal.innerHTML = body;
 
   closeModal()
 };
+// Funcion para seleccionar un personaje y que te muestre una info mas detallada 
 
-const closeModal =()=>{
+
+const closeModal = () => {
   const btnCloseModal = document.querySelector("#buttonModal")
 
-  btnCloseModal.addEventListener('click',(e)=>{
+  btnCloseModal.addEventListener('click', (e) => {
     e.preventDefault()
     modal.classList.remove('modal--show')
 
