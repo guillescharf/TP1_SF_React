@@ -1,5 +1,7 @@
 var url = "https://rickandmortyapi.com/api/character";
 const selector = document.querySelector(".mainContainer_character");
+
+
 document.addEventListener('DOMContentLoaded',()=>{
   getData();
 
@@ -9,10 +11,10 @@ const getData = async () => {
   try {
     const data = await fetch(url);
     const res = await data.json();
-    
     showmeData(res.results);
     searchCharacter(res.results);
     getCharacter(res.results)
+
   } catch (error) {
     console.log(error);
   }
@@ -20,7 +22,7 @@ const getData = async () => {
 
 
 const showmeData = (data) => {
-
+console.log(data)
   let body = ``;
   data.map(
     (item) =>
@@ -44,9 +46,11 @@ const showmeData = (data) => {
   );
   selector.innerHTML = body;
 
- 
 
 
 
+
+  
 };
+
 

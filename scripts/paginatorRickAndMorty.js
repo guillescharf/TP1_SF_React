@@ -16,6 +16,8 @@ buttonNext.addEventListener("click", async () => {
 
   checkPagination(res.info.pages);
   showmeData(res.results);
+  getCharacter(res.results)
+   
 
 });
 
@@ -30,6 +32,7 @@ buttonBck.addEventListener("click", async () => {
   checkPagination(res.info.pages);
   // muestro la info nueva
   showmeData(res.results);
+  getCharacter(res.results)
 
 });
 
@@ -55,18 +58,19 @@ const searchCharacter = (data) => {
 };
 const getCharacter = (data) => {
   const characters = document.querySelectorAll(".mainContainer_character__contenido");
-  console.log(characters)
   
   characters.forEach((character) => {
-    character.addEventListener("click", (e) => {
-      
-      const selectedCharacter = data.filter((character) =>
-          character.id === parseInt(e.target.parentElement.parentNode.id));
-      showCharacterSelected(selectedCharacter);
-      modal.classList.add("modal--show");
-
+      character.addEventListener("click", (e) => {
+        
+        const selectedCharacter = data.filter((character) =>
+            character.id === parseInt(e.target.parentElement.parentNode.id));
+        showCharacterSelected(selectedCharacter);
+        modal.classList.add("modal--show");
+  
+      });
     });
-  });
+ 
+  
 };
 // Funcion que recibe un personaje por parametro y lo muestra en el modal
 showCharacterSelected = (data) => {
@@ -77,15 +81,14 @@ showCharacterSelected = (data) => {
  
       <div class="characterSelected_container_modal" id =${item.id}>
       <img src =${item.image} >  
-      <h3 class ="mainContainer_character__contenido_status ${item.status === "Alive"
-        ? "characterAlive"
-        : item.status === "unknown"
-          ? "characterUnknown"
-          : "characterDead"
-      }" >${item.status}</h3>
       <div class="mainContainer_character__contenido_data">
-        <h1 >${item.name}</h1>
-        <h3>${item.location.name}</h3>
+        <h1 > Name: ${item.name}</h1>
+        <h3> Last Location: ${item.location.name}</h3>
+        <h3> Species: ${item.species}</h3>
+        <h3> Gender: ${item.gender}</h3>
+        <h3> Origin:${item.origin.name}</h3>
+        <h2> Status: ${item.status}</h2>
+
       </div>
  
       </div>
@@ -95,9 +98,9 @@ showCharacterSelected = (data) => {
        </div>`)
   );
 
-  getCharacter()
-  modal.innerHTML = body;
 
+  modal.innerHTML = body;
+  
   closeModal()
 };
 // Funcion para seleccionar un personaje y que te muestre una info mas detallada 
@@ -105,10 +108,12 @@ showCharacterSelected = (data) => {
 
 const closeModal = () => {
   const btnCloseModal = document.querySelector("#buttonModal")
-
+if(btnCloseModal){
   btnCloseModal.addEventListener('click', (e) => {
     e.preventDefault()
     modal.classList.remove('modal--show')
 
   })
+}
+
 }
