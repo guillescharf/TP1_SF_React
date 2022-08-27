@@ -87,7 +87,7 @@ showCharacterSelected = (data) => {
         <h3> Species: ${item.species}</h3>
         <h3> Gender: ${item.gender}</h3>
         <h3> Origin:${item.origin.name}</h3>
-        <h2> Status: ${item.status}</h2>
+   <h2 class=${item.status === "Alive" ? "characterAliveModal": item.status === "unknown"? "characterUnknownModal": "characterDeadModal"}> Status:  ${item.status}</h2>
 
       </div>
  
