@@ -60,8 +60,9 @@ const getCharacter = (data) => {
   const characters = document.querySelectorAll(".mainContainer_character__contenido");
   
   characters.forEach((character) => {
+   
       character.addEventListener("click", (e) => {
-        
+        console.log(character)
         const selectedCharacter = data.filter((character) =>
             character.id === parseInt(e.target.parentElement.parentNode.id));
         showCharacterSelected(selectedCharacter);
