@@ -1,5 +1,6 @@
 var url = "https://rickandmortyapi.com/api/character";
 const selector = document.querySelector(".mainContainer_character");
+console.log(selector);
 
 
 document.addEventListener('DOMContentLoaded',()=>{
@@ -28,7 +29,7 @@ console.log(data)
     (item) =>
     
       (body += `
-    <div class="mainContainer_character__contenido " id =${item.id}>
+    <div class="mainContainer_character__contenido" id =${item.id}>
     <div > <img src =${item.image}>  
     <h3 class ="mainContainer_character__contenido_status ${
       item.status === "Alive"
